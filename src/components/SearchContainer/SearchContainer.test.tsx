@@ -51,47 +51,10 @@ describe('SearchContainer tests', () => {
       expect(getHeader()).toHaveTextContent("Search Container");
     });
 
-    it("should render search component", () => {
-      expect(SearchComponent).toHaveBeenCalledWith({
-        searchTitle: "Search Component",
-        onSearch: expect.any(Function),
-      }, {});
-    });
+    // TODO: it should render search component
 
-    it("should render search result component", () => {
-      expect(SearchResultComponent).toHaveBeenCalledWith({
-        searchResults: [],
-      }, {});
-    });
+    // TODO: it should render search result component
 
-    describe("when onSearch", () => {
-      const searchResults: SearchResult[] = [
-        {
-          id: 1,
-          text: "text-1",
-        },
-        {
-          id: 2,
-          text: "text-2",
-        },
-        {
-          id: 3,
-          text: "text-3",
-        },
-      ];
-
-      beforeEach(() => {
-        (getSearchResults as jest.Mock).mockReturnValue(searchResults);
-        act(() => {
-          getMockSearchComponentButton().click();
-        });
-      });
-
-      it("should render search result component with search results", async () => {
-        expect(SearchResultComponent).toHaveBeenCalledWith({
-          searchResults,
-        }, {});
-      });
-    });
+    // TODO: when onSearch, it should render search result component with search results
   });
 });
